@@ -32,10 +32,9 @@ void Salarios::guardar()
 {
     // Abrir cuadro de diálogo para seleccionar ubicación y nombre del archivo.
     QString nombreArchivo = QFileDialog::getSaveFileName(this,
-                                                         "Guardar datos",
+                                                         "Guardar archivo",
                                                          QDir::home().absolutePath(),
-                                                         "Archivos de salario (*.slr)");
-    qDebug() << nombreArchivo;
+                                                         "Archivos de salarios (*.slr)");
 
     // Crear un objeto QFile
     QFile archivo(nombreArchivo);
@@ -51,11 +50,42 @@ void Salarios::guardar()
         // Mensaje de error si no se puede abrir el archivo
         QMessageBox::warning(this,
                              "Guardar datos",
-                             "No se pudo guardar los datos");
+                             "No se pudo guardar el archivo");
     }
     // Cerrar el archivo
     archivo.close();
 
+}
+
+void Salarios::abrir()
+{
+    // Abrir cuadro de diálogo para seleccionar ubicación y nombre del archivo.
+    QString nombreArchivo = QFileDialog::getOpenFileName(this,
+                                                         "Abrir archivo",
+                                                         QDir::home().absolutePath(),
+                                                         "Archivos de salarios (*.slr)");
+
+    // Crear un objeto QFile
+    QFile archivo(nombreArchivo);
+    // Abrirlo para lectura
+    if(archivo.open(QFile::ReadOnly)){
+        // Crear un 'stream' de texto
+        QTextStream entrada(&archivo);
+        // Leer todo el contenido del archivo
+        QString datos = entrada.readAll();
+        // Cargar el contenido al área de texto
+        ui->outResultado->clear();
+        ui->outResultado->setPlainText(datos);
+        // Mostrar 5 segundo que todo fue bien
+        ui->statusbar->showMessage("Datos leidos desde " + nombreArchivo, 5000);
+    }else {
+        // Mensaje de error si no se puede abrir el archivo
+        QMessageBox::warning(this,
+                             "Abrir datos",
+                             "No se pudo abrir el archivo");
+    }
+    // Cerrar el archivo
+    archivo.close();
 }
 
 
@@ -119,5 +149,11 @@ void Salarios::on_actionNuevo_triggered()
 {
     limpiar();
     ui->outResultado->clear();
+}
+
+
+void Salarios::on_actionAbrir_triggered()
+{
+    abrir();
 }
 
