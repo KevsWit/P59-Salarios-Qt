@@ -104,14 +104,17 @@ void Salarios::abrir()
         int pos = linea.indexOf('$')+1;
         QString strSB = linea.mid(pos);
         ui->outSalarioBruto->setText(" $ " + strSB);
+        m_controlador->setTotalSB(strSB.toFloat());
         linea = entrada.readLine();
         pos = linea.indexOf('$')+1;
         QString strIESS = linea.mid(pos);
         ui->outIESS->setText(" $ " + strIESS);
+        m_controlador->setTotalIESS(strIESS.toFloat());
         linea = entrada.readLine();
         pos = linea.indexOf('$')+1;
         QString strSN = linea.mid(pos);
         ui->outSalarioNeto->setText(" $ " + strSN);
+        m_controlador->setTotalSN(strSN.toFloat());
         // Mostrar 5 segundo que todo fue bien
         ui->statusbar->showMessage("Datos leidos desde " + nombreArchivo, 5000);
     }else {

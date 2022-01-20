@@ -9,7 +9,7 @@
 #include "controlador.h"
 #include "acerca.h"
 
-#define VERSION "1.1"
+#define VERSION "1.2"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Salarios; }
