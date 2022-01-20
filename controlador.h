@@ -20,12 +20,20 @@ public:
     bool agregarObrero(QString nombre, int horas, TipoJornada jornada);
     bool calcularSalario();
     Obrero *obrero() const;
+    float totalSB() const;
+    void setTotalSB(float newTotalSB);
+    float totalIESS() const;
+    void setTotalIESS(float newTotalIESS);
+    float totalSN() const;
+    void setTotalSN(float newTotalSN);
 
 signals:
 
 private:
     Obrero *m_obrero;
-
+    float m_totalSB;
+    float m_totalIESS;
+    float m_totalSN;
 };
 
 #endif // CONTROLADOR_H

@@ -2,8 +2,10 @@
 
 Controlador::Controlador(QObject *parent) : QObject(parent)
 {
-
     this->m_obrero = nullptr;
+    m_totalSB = 0;
+    m_totalIESS = 0;
+    m_totalSN = 0;
 }
 
 bool Controlador::agregarObrero(QString nombre, int horas, TipoJornada jornada)
@@ -58,4 +60,34 @@ bool Controlador::calcularSalario()
 Obrero *Controlador::obrero() const
 {
     return m_obrero;
+}
+
+float Controlador::totalSB() const
+{
+    return m_totalSB;
+}
+
+void Controlador::setTotalSB(float newTotalSB)
+{
+    m_totalSB = newTotalSB;
+}
+
+float Controlador::totalIESS() const
+{
+    return m_totalIESS;
+}
+
+void Controlador::setTotalIESS(float newTotalIESS)
+{
+    m_totalIESS = newTotalIESS;
+}
+
+float Controlador::totalSN() const
+{
+    return m_totalSN;
+}
+
+void Controlador::setTotalSN(float newTotalSN)
+{
+    m_totalSN = newTotalSN;
 }

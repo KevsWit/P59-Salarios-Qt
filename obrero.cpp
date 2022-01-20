@@ -75,7 +75,7 @@ QString Obrero::toString()
     str.append("Horas: " + QString::number(m_horas) + "\n");
     str.append("Salario Bruto: $" + QString::number(m_salarioBruto) + "\n");
     str.append("Descuento: $" + QString::number(m_descuento) + "\n");
-    str.append("salario Neto: $" + QString::number(m_salarioNeto) + "\n");
+    str.append("Salario Neto: $" + QString::number(m_salarioNeto) + "\n");
     return str;
 }
 

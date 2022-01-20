@@ -6,9 +6,27 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>670</width>
-    <height>341</height>
+    <width>630</width>
+    <height>400</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>550</width>
+    <height>370</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>650</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="baseSize">
+   <size>
+    <width>600</width>
+    <height>370</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Salarios</string>
@@ -18,6 +36,12 @@
     <normaloff>:/recursos/salarios.png</normaloff>:/recursos/salarios.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <widget class="QWidget" name="widget" native="true">
@@ -182,6 +206,83 @@
          </property>
         </widget>
        </item>
+       <item>
+        <widget class="QWidget" name="widget_5" native="true">
+         <layout class="QFormLayout" name="formLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+              <weight>75</weight>
+              <bold>true</bold>
+             </font>
+            </property>
+            <property name="text">
+             <string>TOTALES:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Salario Bruto:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="outSalarioBruto">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>IESS:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="outIESS">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="font">
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Salario Neto:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="outSalarioNeto">
+            <property name="readOnly">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
       </layout>
      </widget>
     </item>
@@ -192,7 +293,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>670</width>
+     <width>630</width>
      <height>20</height>
     </rect>
    </property>
